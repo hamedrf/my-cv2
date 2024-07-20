@@ -8,8 +8,97 @@ header {
 }
 nav .nav-link {
   position: relative;
-  color: #ffffff8e;
+  color: #ffffffdd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav .nav-link::after {
-  content: attr();
+  content: attr(title);
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(1.4, 1.4);
+  transition: 0.5s all;
+}
+nav .nav-link:hover {
+  color: #ffffffdd !important;
+}
+nav .nav-link:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+#nav-btn-icon {
+  position: relative;
+  width: 10vw;
+  height: 10vw;
+  margin: auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-btn-icon span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: #000000;
+  border-radius: 99px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-btn-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-btn-icon span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-btn-icon span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-btn-icon.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-btn-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-btn-icon.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
