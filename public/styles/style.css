@@ -1,0 +1,15 @@
+body {
+  height: 400vh;
+}
+
+header {
+  background-color: #3d52a0;
+  height: 70vh;
+}
+nav .nav-link {
+  position: relative;
+  color: #ffffff8e;
+}
+nav .nav-link::after {
+  content: attr();
+}
