@@ -11,6 +11,9 @@ html {
   .svg-separator {
     transform: rotate(25deg) scale(2, 2.3) !important;
   }
+  .svg-header-size {
+    height: 50vh !important;
+  }
 }
 @media only screen and (max-width: 768px) {
 }
@@ -113,14 +116,14 @@ nav .nav-link:hover::after {
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-
+.svg-header-size {
+  height: 35vh;
+}
 .svg-separator {
   transform: rotate(13deg) scale(2, 2.7);
-  /* transform: rotate(90deg) scale(0.5, 1); */
   height: 40vh;
   width: 100%;
   background-color: #ede8f5;
-  /* z-index: -1; */
   transition: 2s;
   animation-fill-mode: forwards;
   animation: header-svg-animation 2s normal;
