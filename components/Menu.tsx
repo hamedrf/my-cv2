@@ -15,7 +15,7 @@ export const Menu = () => {
   });
 
   return (
-    <Navbar expand="lg" className="">
+    <Navbar expand="md">
       <Container fluid>
         <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll">
@@ -30,7 +30,7 @@ export const Menu = () => {
           </div>
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="mx-auto my-2 my-lg-0" navbarScroll>
+          <Nav className="mx-auto my-2 my-lg-0 overflow-hidden" navbarScroll>
             <Nav.Link href="#1">Home</Nav.Link>
             <Nav.Link href="#2">About</Nav.Link>
             <Nav.Link href="#3">Services</Nav.Link>
