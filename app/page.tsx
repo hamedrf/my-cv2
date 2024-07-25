@@ -1,15 +1,14 @@
 import Menu from "@/components/Menu";
 import Image from "next/image";
 import hamedrajabifarjad from "../public/images/hamed-rajabifarjad.png";
+import TypeEffect from "@/components/TypeEffect";
 
 const Home = () => {
   return (
     <>
       <header className="position-relative">
         <Menu />
-        <div
-          className=" position-absolute top-0 w-100 z-n1 svg-header-size"
-        >
+        <div className=" position-absolute top-0 w-100 z-n1 svg-header-size">
           <div className="position-relative svg-separator w-100 h-100">
             <svg
               className="editorial "
@@ -83,7 +82,15 @@ const Home = () => {
               </g>
             </svg>
           </div>
-          <div className="bg-danger col-3">1</div>
+          <div className="col-3">
+            <h1 className="d-flex justify-content-end">
+              <TypeEffect text="سلام اسم من حامد رجبی فرجاد هستش و خوش آ مدید به رزومه من" />
+            </h1>
+            <h5 className="header-text-des">
+              اسم من حامد رجبی فرجاد هستش و خوش آ مدید به رزومه منسلام اسم من
+              حامد رجبی فرجاد هستش و خوش آ مدید به رزومه من1111
+            </h5>
+          </div>
         </div>
       </header>
     </>
