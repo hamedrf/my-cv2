@@ -43,13 +43,12 @@ const Home = () => {
             </svg>
           </div>
         </div>
-        <div className="d-flex justify-content-around align-items-center row flex-lg-row-reverse">
-          <div className=" col-lg-4 col-12 position-relative  d-flex justify-content-center">
+        <div className="d-flex justify-content-around align-items-center row flex-lg-row flex-column">
+          <div className=" header-img-animation col-12 col-md-10 col-lg-6 col-xl-4 position-relative  d-flex justify-content-center">
             <Image
               src={hamedrajabifarjad}
               style={{
                 width: "65%",
-                // transform: "rotate(1deg) translate(0px, -5px);",
               }}
               className="  h-100"
               alt="حامد رجبی فرجاد"
@@ -82,8 +81,8 @@ const Home = () => {
               </g>
             </svg>
           </div>
-          <div className="col-3">
-            <h1 className="d-flex justify-content-end">
+          <div className="col-11 col-md-10 col-lg-6 col-xl-4 my-5">
+            <h1 className="">
               <TypeEffect text="سلام اسم من حامد رجبی فرجاد هستش و خوش آ مدید به رزومه من" />
             </h1>
             <h5 className="header-text-des">

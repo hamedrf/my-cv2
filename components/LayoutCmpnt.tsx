@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const LayoutCmpnt: React.FC<LayoutProps> = ({ children }) => {
   useEffect(() => {
-    $(".nav-item , .header-text-title").each(function () {
+    $(".nav-item-effect").each(function () {
       if ($(this).text !== null && $(this).text !== undefined)
         $(this).attr("title", $(this).text());
     });

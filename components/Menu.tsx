@@ -22,7 +22,9 @@ export const Menu = () => {
         <Navbar.Toggle aria-controls="navbarScroll">
           <div
             id="nav-btn-icon"
-            className={open ? "open" : ""}
+            className={`d-flex justify-content-center align-items-center flex-column ${
+              open ? "open" : ""
+            }`}
             onClick={() => setOpen(!open)}
           >
             <span></span>
@@ -31,7 +33,7 @@ export const Menu = () => {
           </div>
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="mx-auto my-2 my-lg-0 overflow-hidden" navbarScroll>
+          <Nav className="mx-auto my-2 my-lg-0 overflow-hidden " navbarScroll>
             <Nav.Link href="#1">
               <FontAwesomeIcon icon={faHome} />
               <div className="nav-item-effect fs-5">خانه</div>

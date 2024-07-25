@@ -9,8 +9,8 @@ const TypeEffect = (props: { text: string }) => {
     if (index < props.text.length) {
       const timeout = setTimeout(() => {
         setRes(
-          '<span class="blinking-cursor"> .</span>' +
-            props.text.slice(0, index + 1)
+          props.text.slice(0, index + 1) +
+            '<span class="blinking-cursor"> .</span>'
         );
         setIndex(index + 1);
       }, Math.random() * 80 + 30);
