@@ -436,7 +436,7 @@ nav .nav-link:hover .nav-item-effect::after {
   background: linear-gradient(
     0deg,
     var(--color-two) 0%,
-    var(--color-four) 100%
+    var(--color-there) 100%
   );
   transform: translate(-3%, 3%);
   border-radius: 5rem;
@@ -457,13 +457,13 @@ nav .nav-link:hover .nav-item-effect::after {
   background: linear-gradient(
     90deg,
     var(--color-two) 20%,
-    var(--color-four) 80%
+    var(--color-there) 80%
   );
   color: #ffffff;
   border-radius: 999px;
 }
 .about-content {
-  background-color: var(--color-four);
+  background-color: var(--color-five);
   border-radius: 30px;
   padding: 3rem 2rem;
 }
@@ -474,8 +474,10 @@ nav .nav-link:hover .nav-item-effect::after {
   background: url(../images/zahrarajabifarjad.ir.jpeg) no-repeat center top;
   transition: background-position 5s;
   background-size: cover;
-  border-radius: 40px;
+  border-radius: 40px 0px 0px 40px;
   border: 0.8rem solid var(--color-two);
+  height: 70%;
+  z-index: 1;
 }
 .bg-zahrarajabifarjad:hover {
   background-position: center bottom;
@@ -485,4 +487,22 @@ nav .nav-link:hover .nav-item-effect::after {
   background-color: var(--color-five);
   margin: 0.2rem 0.3rem;
   padding: 0.4rem 0.6rem;
+}
+.content-portfolio {
+  border-radius: 0px 40px 40px 0px;
+  background-color: var(--color-two);
+  height: 70%;
+  /* transform: translatex(-100%); */
+  z-index: 0;
+}
+.content-portfolio-effect {
+  animation: content-portfolio-effect 3s forwards;
+}
+@keyframes content-portfolio-effect {
+  0% {
+    transform: translatex(-100%);
+  }
+  100% {
+    transform: translatex(0);
+  }
 }

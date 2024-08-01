@@ -1,12 +1,15 @@
-import Menu from "@/components/Menu";
+import Menu from "@/app/components/Menu";
 import Image from "next/image";
 import hamedrajabifarjad from "../public/images/hamed-rajabifarjad.png";
 import hamedrajabifarjad1 from "../public/images/hamedrajabifarjad.jpg";
-import zahrarajabifarjad from "../public/images/zahrarajabifarjad.ir.jpeg";
-import TypeEffect from "@/components/TypeEffect";
+import TypeEffect from "@/app/components/TypeEffect";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
-import SkillProgress from "@/components/SkillProgress";
-import Tag from "@/components/Tag";
+import SkillProgress from "@/app/components/SkillProgress";
+import Tag from "@/app/components/Tag";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./stor";
+import { next1 } from "./features/portfolio/portfolioSlice";
+import Portfolio from "./components/portfolio";
 
 const Home = () => {
   return (
@@ -103,7 +106,7 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <section className="d-flex  justify-content-around flex-md-row-reverse flex-row align-items-center row">
+      <section className="d-flex  justify-content-around flex-md-row-reverse flex-row align-items-center row pt-5">
         <div className="col-12 col-lg-6 col-4 d-flex  flex-column align-items-center justify-content-center ">
           <div
             className=" col-8 col-lg-6 about-img mb-5 align-self-lg-center align-self-start"
@@ -203,33 +206,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section
-        className=" d-flex justify-content-center align-items-center  flex-lg-row-reverse  row  "
-        style={{ height: "100vh" }}
-      >
-        <div className=" bg-zahrarajabifarjad col-11 col-lg-6  h-50 "></div>
-        <div className="col-11 col-lg-5 col-xl-4 col-xxl-3 d-flex justify-content-center align-items-center flex-column">
-          <h1 className="my-3">پروژه تست</h1>
-          <p className="my-3">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-          </p>
-          <div className="my-3 d-flex flex-wrap w-75">
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-            <Tag text="redux" />
-          </div>
-          <button className="my-3 btn btn-primary">دیدن از صفحه</button>
-        </div>
-      </section>
+      <Portfolio />
     </>
   );
 };
