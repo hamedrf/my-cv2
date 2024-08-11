@@ -13,7 +13,7 @@ const Portfolio = () => {
   return (
     <section className="position-relative  overflow-hidden d-flex justify-content-center align-items-center ">
       <div
-        className="round top-50 translate-middle-y  position-absolute z-3 arrow arrow--right"
+        className="arrow-right arrow  position-absolute z-3 "
         style={{ right: "20px" }}
         onClick={() => dispatch(PreviousPortfolio())}
       >
@@ -23,7 +23,7 @@ const Portfolio = () => {
         <span></span>
       </div>
       <div
-        className=" round round-2 top-50 translate-middle-y position-absolute z-3 arrow arrow--left"
+        className="arrow-left arrow position-absolute z-3 "
         style={{ left: "20px" }}
         onClick={() => {
           dispatch(nextPortfolio());

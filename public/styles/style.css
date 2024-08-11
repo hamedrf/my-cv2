@@ -95,6 +95,9 @@ html {
     height: auto !important;
     padding-bottom: 8rem;
   }
+  .arrow {
+    top: 90% !important;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -570,7 +573,7 @@ nav .nav-link:hover .nav-item-effect::after {
     transform: translatey(-100%) !important;
   }
   100% {
-    transform: translatey(-5%) !important;
+    transform: translatey(-8%) !important;
   }
 }
 @keyframes content-portfolio-effect {
@@ -654,17 +657,21 @@ nav .nav-link:hover .nav-item-effect::after {
     z-index: -1;
   }
 }
-.round-2 {
-  transform: rotate(180deg) translatey(50%) !important;
+.arrow-left {
+  transform: rotate(180deg) translatey(50%);
 }
-.round {
+.arrow-right {
+  transform: translatey(-50%);
+}
+.arrow {
   position: relative;
   border: 3px solid var(--color-one);
   width: 6rem;
   height: 6rem;
+  top: 50%;
   border-radius: 100%;
 }
-.round::after {
+.arrow::after {
   content: "";
   width: 0;
   transition: 0.5s;
@@ -676,11 +683,11 @@ nav .nav-link:hover .nav-item-effect::after {
   background-color: var(--color-there);
   border-radius: 100%;
 }
-.round:hover::after {
+.arrow:hover::after {
   width: 100%;
   height: 100%;
 }
-.round span {
+.arrow span {
   z-index: 999;
   height: 3px;
   margin: 1px;
@@ -690,7 +697,7 @@ nav .nav-link:hover .nav-item-effect::after {
   transition: 0.4s ease;
 }
 
-.round span:first-child {
+.arrow span:first-child {
   display: block;
   position: absolute;
   transform: rotate(-40deg);
@@ -698,7 +705,7 @@ nav .nav-link:hover .nav-item-effect::after {
   bottom: 35%;
 }
 
-.round span:nth-child(2) {
+.arrow span:nth-child(2) {
   display: block;
   position: absolute;
   transform: rotate(-40deg);
@@ -706,7 +713,7 @@ nav .nav-link:hover .nav-item-effect::after {
   bottom: 35%;
 }
 
-.round span:nth-child(3) {
+.arrow span:nth-child(3) {
   display: block;
   position: absolute;
   transform: rotate(40deg);
@@ -714,29 +721,29 @@ nav .nav-link:hover .nav-item-effect::after {
   bottom: 54%;
 }
 
-.round span:nth-child(4) {
+.arrow span:nth-child(4) {
   display: block;
   position: absolute;
   transform: rotate(40deg);
   left: 45%;
   bottom: 54%;
 }
-.round:hover span {
+.arrow:hover span {
   background-color: #fff;
 }
-.round:hover span:nth-child(1) {
+.arrow:hover span:nth-child(1) {
   transform: rotate(140deg);
 }
 
-.round:hover span:nth-child(2) {
+.arrow:hover span:nth-child(2) {
   transform: rotate(140deg);
 }
 
-.round:hover span:nth-child(3) {
+.arrow:hover span:nth-child(3) {
   transform: rotate(220deg);
 }
 
-.round:hover span:nth-child(4) {
+.arrow:hover span:nth-child(4) {
   transform: rotate(220deg);
 }
 
