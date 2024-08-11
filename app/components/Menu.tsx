@@ -22,7 +22,7 @@ export const Menu = () => {
           <div
             id="nav-btn-icon"
             className={`d-flex justify-content-center align-items-center flex-column ${
-              open ? "open" : ""
+              open && "open"
             }`}
             onClick={() => setOpen(!open)}
           >

@@ -38,21 +38,64 @@ html {
   --color-progress: #ff6f61;
 }
 
+.header-font {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.des-font {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #353535;
+}
+.text-font {
+  font-size: 1.8rem;
+}
 /* mobile */
 @media only screen and (max-width: 992px) {
   .svg-separator {
     transform: rotate(25deg) scale(2.4, 2.2) !important;
   }
   .svg-header-size {
-    height: 60vh !important;
+    height: 58vh !important;
   }
   .progress-bar-icon {
     width: 10% !important;
   }
+  .social-bar ul li a {
+    font-size: 10vw;
+    padding: 3vw;
+    margin: 3vw;
+  }
+  .about-content {
+    padding: 1rem 1.2rem !important;
+    margin-top: 3rem !important;
+  }
+  .header-font {
+    font-size: 1.7rem;
+  }
+  .text-font {
+    font-size: 1.2rem;
+  }
+  .des-font {
+    font-size: 1.1rem;
+  }
 }
+
 @media only screen and (min-width: 992px) {
   .custom-border-head::after {
     display: block !important;
+  }
+}
+@media (max-width: 1800px) and (min-width: 992px) {
+  .about-content {
+    padding: 1rem 1.2rem !important;
+    margin-top: 12rem !important  ;
+  }
+  .header-font {
+    font-size: 1.8rem;
+  }
+  .text-font {
+    font-size: 1.4rem;
   }
 }
 /* header */
@@ -470,16 +513,28 @@ nav .nav-link:hover .nav-item-effect::after {
 
 /* Portfolio */
 
-.bg-zahrarajabifarjad {
-  background: url(../images/zahrarajabifarjad.ir.jpeg) no-repeat center top;
+.bg-background-portfoliio {
   transition: background-position 5s;
-  background-size: cover;
-  border-radius: 40px 0px 0px 40px;
-  border: 0.8rem solid var(--color-two);
+  border-radius: 40px;
   height: 70%;
   z-index: 1;
 }
-.bg-zahrarajabifarjad:hover {
+.bg-hamedrajabifarjad {
+  background: url(../images/hamedrajabifarjad.ir.jpeg) no-repeat center top;
+  background-size: cover;
+  border: 0.8rem solid #9badff;
+}
+.bg-zahrarajabifarjad {
+  background: url(../images/zahrarajabifarjad.ir.jpeg) no-repeat center top;
+  background-size: cover;
+  border: 0.8rem solid #75aeff;
+}
+.bg-arameshbadan {
+  background: url(../images/arameshbadan.ir.jpeg) no-repeat center top;
+  background-size: cover;
+  border: 0.8rem solid #49c3cc;
+}
+.bg-background-portfoliio:hover {
   background-position: center bottom;
 }
 
@@ -492,17 +547,307 @@ nav .nav-link:hover .nav-item-effect::after {
   border-radius: 0px 40px 40px 0px;
   background-color: var(--color-two);
   height: 70%;
-  /* transform: translatex(-100%); */
+  transform: translatex(-100%);
   z-index: 0;
 }
 .content-portfolio-effect {
-  animation: content-portfolio-effect 3s forwards;
+  animation: content-portfolio-effect 0.5s 1s forwards;
 }
 @keyframes content-portfolio-effect {
   0% {
     transform: translatex(-100%);
   }
   100% {
-    transform: translatex(0);
+    transform: translatex(-5%);
   }
+}
+
+.effect-after-next {
+  transform: scale(1, 1) translateX(-50%);
+  opacity: 1;
+  z-index: 2;
+  animation: effect-after-next 1.5s forwards;
+}
+@keyframes effect-after-next {
+  0% {
+    transform: scale(1.2, 1.2) translateX(-50%);
+    opacity: 0;
+    z-index: 2;
+  }
+  100% {
+    transform: scale(1, 1) translateX(-50%) !important;
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+.effect-befor-next {
+  transform: scale(0, 0) translateX(-50%);
+  opacity: 0;
+  animation: effect-befor-next 1.5s forwards;
+}
+@keyframes effect-befor-next {
+  0% {
+    transform: scale(1, 1) translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5, 0.5) translateX(-50%);
+    opacity: 0;
+  }
+}
+.effect-after-Previous {
+  opacity: 0;
+  z-index: -1;
+  animation: effect-after-Previous 1.5s forwards;
+}
+@keyframes effect-after-Previous {
+  0% {
+    transform: scale(0.5, 0.5) translateX(-50%);
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    transform: scale(1, 1) translateX(-50%);
+    opacity: 1;
+    z-index: 2;
+  }
+}
+.effect-befor-Previous {
+  opacity: 1;
+  z-index: 1;
+  animation: effect-befor-Previous 1.5s forwards;
+}
+@keyframes effect-befor-Previous {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.round-2 {
+  transform: rotate(180deg) !important;
+}
+.round {
+  position: relative;
+  border: 3px solid var(--color-one);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+}
+.round::after {
+  content: "";
+  width: 0;
+  transition: 0.5s;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: var(--color-there);
+  border-radius: 100%;
+}
+.round:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.round span {
+  z-index: 999;
+  height: 3px;
+  margin: 1px;
+  width: 30px;
+  border-radius: 99px;
+  background: var(--color-one);
+  transition: 0.4s ease;
+}
+
+.round span:first-child {
+  display: block;
+  position: absolute;
+  transform: rotate(-40deg);
+  left: 25%;
+  bottom: 35%;
+}
+
+.round span:nth-child(2) {
+  display: block;
+  position: absolute;
+  transform: rotate(-40deg);
+  left: 45%;
+  bottom: 35%;
+}
+
+.round span:nth-child(3) {
+  display: block;
+  position: absolute;
+  transform: rotate(40deg);
+  left: 25%;
+  bottom: 54%;
+}
+
+.round span:nth-child(4) {
+  display: block;
+  position: absolute;
+  transform: rotate(40deg);
+  left: 45%;
+  bottom: 54%;
+}
+.round:hover span {
+  background-color: #fff;
+}
+.round:hover span:nth-child(1) {
+  transform: rotate(140deg);
+}
+
+.round:hover span:nth-child(2) {
+  transform: rotate(140deg);
+}
+
+.round:hover span:nth-child(3) {
+  transform: rotate(220deg);
+}
+
+.round:hover span:nth-child(4) {
+  transform: rotate(220deg);
+}
+
+/* footer */
+.social-bar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.social-bar ul li {
+  list-style: none;
+}
+.social-bar ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 4vw;
+  padding: 1vw;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 1vw;
+  transition: 0.5s !important;
+}
+.social-bar ul li a span {
+  position: absolute;
+  transition: transform 0.5s !important;
+}
+.social-bar ul li a span:nth-child(1),
+.social-bar ul li a span:nth-child(3) {
+  width: 100%;
+  height: 0.2vw;
+  background: #fff;
+}
+.social-bar ul li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+.social-bar ul li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s !important;
+}
+
+.social-bar ul li a span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+}
+.social-bar ul li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s !important;
+}
+
+.social-bar ul li a span:nth-child(2),
+.social-bar ul li a span:nth-child(4) {
+  width: 0.2vw;
+  height: 100%;
+  background: #404040;
+}
+.social-bar ul li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+.social-bar ul li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform 0.5s !important;
+}
+.social-bar ul li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+.social-bar ul li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform 0.5s !important;
+}
+
+.social-bar .github:hover {
+  color: #3b5998;
+}
+.social-bar .github:hover span {
+  background: #3b5998;
+}
+.social-bar .telegram:hover {
+  color: #1da1f2;
+}
+.social-bar .telegram:hover span {
+  background: #1da1f2;
+}
+.social-bar .instagram:hover {
+  color: #c32aa3;
+}
+.social-bar .instagram:hover span {
+  background: #c32aa3;
+}
+.social-bar .stack-overflow:hover {
+  color: #e7700d;
+}
+.social-bar .stack-overflow:hover span {
+  background: #e7700d;
+}
+.social-bar .linkedin:hover {
+  color: #0e76a8;
+}
+.social-bar .linkedin:hover span {
+  background: #0e76a8;
+}
+.custom-shape-divider-bottom-1723269695 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1723269695 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 10rem;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1723269695 .shape-fill {
+  fill: var(--color-one);
 }
