@@ -79,6 +79,22 @@ html {
   .des-font {
     font-size: 1.1rem;
   }
+  .bg-background-portfoliio {
+    height: 40vh !important;
+    width: 95%;
+  }
+  .content-portfolio {
+    border-radius: 0px 0px 40px 40px !important;
+    height: auto !important;
+    width: 95%;
+    transform: translateY(-10%) !important;
+    padding: 4rem 0px 0px 1rem;
+    animation: none !important;
+  }
+  #portfolio {
+    height: auto !important;
+    padding-bottom: 8rem;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -516,22 +532,20 @@ nav .nav-link:hover .nav-item-effect::after {
 .bg-background-portfoliio {
   transition: background-position 5s;
   border-radius: 40px;
+  background-size: cover !important;
   height: 70%;
   z-index: 1;
 }
 .bg-hamedrajabifarjad {
   background: url(../images/hamedrajabifarjad.ir.jpeg) no-repeat center top;
-  background-size: cover;
   border: 0.8rem solid #9badff;
 }
 .bg-zahrarajabifarjad {
   background: url(../images/zahrarajabifarjad.ir.jpeg) no-repeat center top;
-  background-size: cover;
   border: 0.8rem solid #75aeff;
 }
 .bg-arameshbadan {
   background: url(../images/arameshbadan.ir.jpeg) no-repeat center top;
-  background-size: cover;
   border: 0.8rem solid #49c3cc;
 }
 .bg-background-portfoliio:hover {
@@ -545,13 +559,19 @@ nav .nav-link:hover .nav-item-effect::after {
 }
 .content-portfolio {
   border-radius: 0px 40px 40px 0px;
-  background-color: var(--color-two);
   height: 70%;
   transform: translatex(-100%);
   z-index: 0;
-}
-.content-portfolio-effect {
   animation: content-portfolio-effect 0.5s 1s forwards;
+}
+
+@keyframes content-portfolio-effect-mobile {
+  0% {
+    transform: translatey(-100%) !important;
+  }
+  100% {
+    transform: translatey(-5%) !important;
+  }
 }
 @keyframes content-portfolio-effect {
   0% {
@@ -563,36 +583,38 @@ nav .nav-link:hover .nav-item-effect::after {
 }
 
 .effect-after-next {
-  transform: scale(1, 1) translateX(-50%);
+  transform: scale(1, 1);
   opacity: 1;
   z-index: 2;
   animation: effect-after-next 1.5s forwards;
 }
 @keyframes effect-after-next {
   0% {
-    transform: scale(1.2, 1.2) translateX(-50%);
+    transform: scale(1.2, 1.2);
     opacity: 0;
     z-index: 2;
   }
   100% {
-    transform: scale(1, 1) translateX(-50%) !important;
+    transform: scale(1, 1) !important;
     opacity: 1;
     z-index: 2;
   }
 }
 
 .effect-befor-next {
-  transform: scale(0, 0) translateX(-50%);
+  transform: scale(0, 0);
   opacity: 0;
   animation: effect-befor-next 1.5s forwards;
+  position: absolute;
+  top: 0;
 }
 @keyframes effect-befor-next {
   0% {
-    transform: scale(1, 1) translateX(-50%);
+    transform: scale(1, 1);
     opacity: 1;
   }
   100% {
-    transform: scale(0.5, 0.5) translateX(-50%);
+    transform: scale(0.5, 0.5);
     opacity: 0;
   }
 }
@@ -603,12 +625,12 @@ nav .nav-link:hover .nav-item-effect::after {
 }
 @keyframes effect-after-Previous {
   0% {
-    transform: scale(0.5, 0.5) translateX(-50%);
+    transform: scale(0.5, 0.5);
     opacity: 0;
     z-index: -1;
   }
   100% {
-    transform: scale(1, 1) translateX(-50%);
+    transform: scale(1, 1);
     opacity: 1;
     z-index: 2;
   }
@@ -617,6 +639,8 @@ nav .nav-link:hover .nav-item-effect::after {
   opacity: 1;
   z-index: 1;
   animation: effect-befor-Previous 1.5s forwards;
+  position: absolute;
+  top: 0;
 }
 @keyframes effect-befor-Previous {
   0% {
@@ -631,7 +655,7 @@ nav .nav-link:hover .nav-item-effect::after {
   }
 }
 .round-2 {
-  transform: rotate(180deg) !important;
+  transform: rotate(180deg) translatey(50%) !important;
 }
 .round {
   position: relative;

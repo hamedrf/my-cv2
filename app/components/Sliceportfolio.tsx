@@ -9,9 +9,8 @@ const SlicePortfolio: React.FC<SlicePortfolioProps> = ({ item }) => {
     <div
       id="portfolio"
       key={item.id}
-      style={{ left: "50%" }}
       className={`${item.action} 
-            d-flex justify-content-center align-items-center  flex-lg-row-reverse  row  h-100 position-absolute top-0   w-100
+            d-flex justify-content-start align-items-center justify-content-lg-center flex-lg-row-reverse  flex-column row   vh-100 w-100
       `}
     >
       <div
@@ -19,7 +18,7 @@ const SlicePortfolio: React.FC<SlicePortfolioProps> = ({ item }) => {
       ></div>
       <div
         style={{ background: item.color }}
-        className="col-11 col-lg-5 col-xl-4 col-xxl-3 d-flex justify-content-center align-items-center content-portfolio-effect flex-column content-portfolio"
+        className="col-11 col-lg-5 col-xl-4  col-xxl-3 d-flex justify-content-center  align-items-center content-portfolio-effect flex-column content-portfolio"
       >
         <h1 className="header-font">{item?.title}</h1>
         <p className="m-5 des-font">{item?.des}</p>

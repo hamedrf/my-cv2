@@ -11,7 +11,7 @@ const Portfolio = () => {
   const dispatch = useDispatch<AppDispatch>();
   const portfolioItem = useSelector((state: RootState) => state.portfolio);
   return (
-    <section className="position-relative  vh-100 overflow-hidden">
+    <section className="position-relative  overflow-hidden d-flex justify-content-center align-items-center ">
       <div
         className="round top-50 translate-middle-y  position-absolute z-3 arrow arrow--right"
         style={{ right: "20px" }}
