@@ -14,20 +14,31 @@ const SlicePortfolio: React.FC<SlicePortfolioProps> = ({ item }) => {
       `}
     >
       <div
-        className={`bg-background-portfoliio ${item.imgClass} col-12 col-lg-6`}
+        className={`bg-background-portfoliio bg-${item.imgClass} col-12 col-lg-6`}
       ></div>
       <div
         style={{ background: item.color }}
         className="col-11 col-lg-5 col-xl-4  col-xxl-3 d-flex justify-content-center  align-items-center content-portfolio-effect flex-column content-portfolio"
       >
-        <h1 className="header-font">{item?.title}</h1>
-        <p className="m-5 des-font">{item?.des}</p>
+        <h1 className="header-font my-3 ">{item?.title}</h1>
+        <p className="m-lg-5 my-4 mx-2 des-font">{item?.des}</p>
         <div className="d-flex flex-wrap justify-content-center w-75">
           {item?.tags.map((e, index) => {
             return <Tag key={index} text={e} />;
           })}
         </div>
-        <button className="my-3 btn  btn-primary">دیدن از صفحه</button>
+        {item.imgClass !== "hamedrajabifarjad" ? (
+          <a href={`https://${item.imgClass}.ir`}>
+            <button className="btn-animation my-4">دیدن صفحه</button>
+          </a>
+        ) : (
+          <button
+            className="btn-animation my-4"
+            onClick={() => alert("این وب سایت نسخه قدیمی همین وب سایت هست")}
+          >
+            دیدن صفحه
+          </button>
+        )}
       </div>
     </div>
   );

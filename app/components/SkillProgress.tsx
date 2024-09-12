@@ -47,7 +47,6 @@ const SkillProgress: React.FC<SkillProgressProps> = ({
           className="text-center"
           style={{
             width: `${progressEffect}%`,
-            // backgroundColor: "var(--color-progress)",
           }}
         >
           {" "}

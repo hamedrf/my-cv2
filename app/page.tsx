@@ -1,8 +1,8 @@
 import Menu from "@/app/components/Menu";
 import Image from "next/image";
-import hamedrajabifarjad from "../public/images/hamed-rajabifarjad.png";
-import hamedrajabifarjad1 from "../public/images/hamedrajabifarjad.jpg";
-import icon from "../public/images/icon.jpg";
+import icon from "../public/images/icon.webp";
+import headerImage from "../public/images/hamed-rajabifarjad.webp";
+import aboutImage from "../public/images/hamedrajabifarjad.webp";
 import TypeEffect from "@/app/components/TypeEffect";
 import {
   faGithub,
@@ -15,11 +15,14 @@ import {
 import SkillProgress from "@/app/components/SkillProgress";
 import Portfolio from "./components/Portfolio";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "./components/Modal";
+import { useShowModal } from "./context/ModalShow";
+import BtnCall from "./components/BtnCall";
 
 const Home = () => {
   return (
     <>
-      <header className="position-relative">
+      <header id="home" className="position-relative">
         <Menu />
         <div className=" position-absolute top-0 w-100 z-n1 svg-header-size">
           <div className="position-relative svg-separator w-100 h-100">
@@ -58,14 +61,13 @@ const Home = () => {
         </div>
         <div className="d-flex justify-content-around align-items-center row flex-lg-row flex-column">
           <div className=" header-img-animation col-12 col-md-10 col-lg-6 col-xxl-4 position-relative  d-flex justify-content-center">
-            <Image
-              src={hamedrajabifarjad}
-              style={{
-                width: "65%",
-              }}
-              className="  h-100"
+            <img
+              src="images/hamed-rajabifarjad.webp"
+              style={{ objectFit: "cover" }}
+              className=" h-100 important-width-about-img"
               alt="حامد رجبی فرجاد"
-            />
+            ></img>
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="position-absolute bottom-0 z-n1"
@@ -78,13 +80,10 @@ const Home = () => {
             >
               <defs>
                 <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
-                  <stop offset="0%" stop-color="#7091e6" />
-                  <stop offset="100%" stop-color="#3d52a0" />
+                  <stop offset="0%" stopColor="#7091e6" />
+                  <stop offset="100%" stopColor="#3d52a0" />
                 </linearGradient>
               </defs>
-              <metadata>
-                Created by potrace 1.10, written by Peter Selinger 2001-2011
-              </metadata>
               <g
                 transform="translate(0,319)  scale(0.1000,-0.1000)"
                 fill="url(#grad1)"
@@ -105,25 +104,28 @@ const Home = () => {
               />
             </h1>
             <h5 className="des-font">
-              اسم من حامد رجبی فرجاد هستش و خوش آ مدید به رزومه منسلام اسم من
-              حامد رجبی فرجاد هستش و خوش آ مدید به رزومه من1111
+              اینجا می‌توانید نگاهی دقیق‌تر به پروژه‌ها و مهارت‌های من بیندازید
+              و با کارهایی که تاکنون انجام داده‌ام، بیشتر آشنا شوید.
             </h5>
           </div>
         </div>
       </header>
-      <section className="d-flex  justify-content-around flex-md-row-reverse flex-row align-items-center row pt-5 mb-5">
+      <section
+        id="about"
+        className="d-flex  justify-content-around flex-md-row-reverse flex-row align-items-center row pt-5 mb-5"
+      >
         <div className="col-12 col-lg-6 col-xl-6 d-flex  flex-column align-items-center justify-content-center ">
           <div
             className=" col-8 col-lg-6 about-img mb-5 align-self-lg-center align-self-start"
             style={{ transform: "translatex(-30%)" }}
           >
-            <Image
-              src={hamedrajabifarjad1}
+            <img
+              src="images/hamedrajabifarjad.webp"
               style={{
-                width: "100%",
                 borderRadius: "5rem",
+                objectFit: "cover",
               }}
-              className="h-100 "
+              className="w-100 h-100"
               alt="حامد رجبی فرجاد"
             />
           </div>
@@ -211,7 +213,11 @@ const Home = () => {
         </div>
       </section>
       <Portfolio />
-      <div className="position-relative" style={{ paddingTop: "15vh" }}>
+      <div
+        id="contact"
+        className="position-relative"
+        style={{ paddingTop: "15vh" }}
+      >
         <div className="custom-shape-divider-bottom-1723269695">
           <svg
             data-name="Layer 1"
@@ -242,7 +248,7 @@ const Home = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-100 position-absolute top-0 z-n1 w-100"
+          className="h-100 position-absolute top-0 z-n1 min-vw-100"
           style={{ marginBottom: "-1px" }}
           version="1.1"
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -262,27 +268,27 @@ const Home = () => {
             <path
               d="M1276.29 1628.85C1626.35 1446.75 1652.56 305 2108.86 287.93 2565.15 270.86 2687.9 849.39 2941.42 878.33"
               stroke="var(--color-two)"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
             <path
               d="M188.04 1440.7C441.57 1401.53 569.19 797.79 983.93 792.98 1398.67 788.17 1381.87 972.98 1779.81 972.98 2177.76 972.98 2371.71 794.1 2575.7 792.98"
               stroke="var(--color-two)"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
             <path
               d="M1110.4 1475.78C1401.58 1275.69 1236.07 228.62 1750.6 215.89 2265.13 203.16 2685.8 724.58 3031 734.29"
               stroke="var(--color-two)"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
             <path
               d="M216.52 1541C543.28 1376.19 530.23 352.44 1000.42 304.7 1470.62 256.96 1392.37 484.7 1784.33 484.7 2176.28 484.7 2367.16 305.85 2568.23 304.7"
               stroke="var(--color-two)"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
             <path
               d="M1070.33 1693.01C1343.45 1633.36 1366.46 991.55 1875.18 916.72 2383.9 841.89 2443.49 432.95 2680.03 412.72"
               stroke="var(--color-two)"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
           </g>
           <defs>
@@ -292,8 +298,8 @@ const Home = () => {
           </defs>
         </svg>
         <div
-          className="d-flex justify-content-center align-items-center flex-column "
-          style={{ width: "10vw" }}
+          className="d-flex justify-content-center align-items-center flex-column icon-footer"
+          style={{ width: "15rem" }}
         >
           <Image
             src={icon}
@@ -305,7 +311,7 @@ const Home = () => {
           <strong>حامد رجبی فرجاد</strong>
         </h1>
 
-        <div className="social-bar mt-5">
+        <div className="social-bar my-3">
           <ul>
             <li>
               <a className="telegram" href="https://t.me/hamed_rf276">
@@ -360,10 +366,12 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div className="text-center text-light mt-5 mb-3">
+        <BtnCall />
+        <div className="text-center text-light mt-5 mb-3 mx-2">
           © تمامی حقوق این وبسایت متعلق به حامد رجبی فرجاد میباشد .
         </div>
       </section>
+      <Modal />
     </>
   );
 };

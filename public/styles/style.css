@@ -37,6 +37,48 @@ html {
   --color-five: #ede8f5;
   --color-progress: #ff6f61;
 }
+.rtl-important {
+  direction: rtl !important;
+}
+.btn-animation {
+  padding: 0.8rem !important;
+  position: relative;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 3px var(--color-five);
+  -moz-box-shadow: 0px 0px 0px 3px var(--color-five);
+  box-shadow: 0px 0px 0px 3px var(--color-five);
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-animation:hover {
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 0px 5px 3px var(--color-five);
+  -moz-box-shadow: 0px 0px 5px 3px var(--color-five);
+  box-shadow: 0px 0px 5px 3px var(--color-five);
+}
+
+.btn-animation::after {
+  width: 0;
+  z-index: -1;
+  border-radius: 20px;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-two);
+  content: "";
+  transition: all 0.4s ease;
+}
+.btn-animation:hover:after {
+  right: 0;
+  width: 100%;
+}
+.btn-animation:active {
+  top: 2px;
+}
 
 .header-font {
   font-size: 2.4rem;
@@ -60,11 +102,6 @@ html {
   }
   .progress-bar-icon {
     width: 10% !important;
-  }
-  .social-bar ul li a {
-    font-size: 10vw;
-    padding: 3vw;
-    margin: 3vw;
   }
   .about-content {
     padding: 1rem 1.2rem !important;
@@ -100,6 +137,29 @@ html {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .modal {
+    width: 30rem;
+    height: 45rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal {
+    width: 95%;
+    height: auto;
+    max-height: 95%;
+    min-height: 70%;
+  }
+  .social-bar ul li a {
+    font-size: 2.5rem !important;
+    padding: 0.5rem !important;
+    margin: 0 0.5rem !important;
+  }
+  .icon-footer {
+    width: 10rem !important;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .custom-border-head::after {
     display: block !important;
@@ -111,7 +171,7 @@ html {
     margin-top: 12rem !important  ;
   }
   .header-font {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
   .text-font {
     font-size: 1.4rem;
@@ -144,7 +204,7 @@ nav .nav-link .nav-item-effect::after {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transform: scale(1.6, 1.6);
+  transform: scale(2, 2);
   transition: 0.5s all;
 }
 nav .nav-link:hover {
@@ -248,8 +308,6 @@ nav .nav-link:hover .nav-item-effect::after {
   height: 60px;
   max-height: 60px;
   margin: 0;
-  /* z-index: 5; */
-
   bottom: 0;
   position: absolute;
   left: 0px;
@@ -395,15 +453,30 @@ nav .nav-link:hover .nav-item-effect::after {
     width: 18rem;
   }
 }
-/* onvar
-.pedar {
+/* modal */
+
+.modal {
+  right: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: translate(50%, -50%);
+  background-color: var(--color-five);
+  animation: modalShow 1.5s;
+  will-change: opacity, width, height, border-raddus, right;
+}
+.modal * {
+  opacity: 0;
+  animation: modalShowChild 1s 1.25s forwards;
+  will-change: opacity;
+}
+.modal-img {
   position: relative;
   width: 210px;
   height: 210px;
   overflow: hidden;
 }
 
-.pedar::before {
+.modal-img::before {
   transform: rotate(-40deg) scale(3, 1.3);
   content: "";
   width: 100%;
@@ -411,13 +484,12 @@ nav .nav-link:hover .nav-item-effect::after {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--bs-secondary-bg-subtle);
+  background-color: var(--color-five);
   z-index: 3;
   opacity: 0;
-  animation: animation-hide-1 4s linear 2.45s infinite;
-  background-color: pink;
+  animation: animation-hide-1 4s linear 2.25s infinite;
 }
-.pedar::after {
+.modal-img::after {
   transform: rotate(-55deg) scale(3, 1.5) translatey(20px);
   content: "";
   width: 100%;
@@ -425,20 +497,89 @@ nav .nav-link:hover .nav-item-effect::after {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: var(--bs-secondary-bg-subtle);
+  background-color: var(--color-five);
   z-index: 3;
   opacity: 0;
   animation: animation-hide-2 4s linear 2.45s infinite;
+}
+.bg-modal {
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50.1%);
+  animation: bgModalShow 0.75s;
+  will-change: width, height;
+}
+
+.bg-modal button {
+  animation: modalShowChild 1s 1.5s forwards;
+  opacity: 0;
+  will-change: opacity;
+}
+
+@keyframes modalShowChild {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes modalShow {
+  0% {
+    opacity: 0;
+    min-height: 0%;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    right: 0%;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 999%;
+  }
+  75% {
+    right: 50%;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 999%;
+    min-height: 0%;
+  }
+  100% {
+    right: 50%;
+    width: 30rem;
+    height: 45rem;
+    border-radius: 20px;
+    opacity: 1;
+    min-height: 70%;
+  }
+}
+@keyframes bgModalShow {
+  0% {
+    width: 0;
+    height: 0.5vh;
+  }
+  60% {
+    width: 100vw;
+    height: 0.5vh;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 @keyframes animation-hide-1 {
   0% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 1;
   }
-  45% {
+  51% {
     opacity: 0;
   }
   100% {
@@ -470,22 +611,24 @@ nav .nav-link:hover .nav-item-effect::after {
   width: 80%;
   height: 80%;
   border-radius: 999px;
-  background-color: red;
   z-index: 5;
 }
 .cirle-animation::after {
   content: "";
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
   background-color: green;
   border-radius: 999px;
   position: absolute;
   bottom: 10px;
-  left: 30px;
-} */
+  left: 25px;
+}
 /* about */
 .about-img {
   position: relative;
+}
+.important-width-about-img {
+  width: 65% !important;
 }
 .about-img::after {
   content: "";
@@ -540,15 +683,15 @@ nav .nav-link:hover .nav-item-effect::after {
   z-index: 1;
 }
 .bg-hamedrajabifarjad {
-  background: url(../images/hamedrajabifarjad.ir.jpeg) no-repeat center top;
+  background: url(../images/hamedrajabifarjad.ir.webp) no-repeat center top;
   border: 0.8rem solid #9badff;
 }
 .bg-zahrarajabifarjad {
-  background: url(../images/zahrarajabifarjad.ir.jpeg) no-repeat center top;
+  background: url(../images/zahrarajabifarjad.ir.webp) no-repeat center top;
   border: 0.8rem solid #75aeff;
 }
-.bg-arameshbadan {
-  background: url(../images/arameshbadan.ir.jpeg) no-repeat center top;
+.bg-arameshebadan {
+  background: url(../images/arameshbadan.ir.webp) no-repeat center top;
   border: 0.8rem solid #49c3cc;
 }
 .bg-background-portfoliio:hover {
@@ -762,12 +905,12 @@ nav .nav-link:hover .nav-item-effect::after {
   justify-content: center;
   align-items: center;
   position: relative;
-  font-size: 4vw;
-  padding: 1vw;
+  font-size: 5rem;
+  padding: 1rem;
   text-align: center;
   text-decoration: none;
   color: #fff;
-  margin: 0 1vw;
+  margin: 0 1rem;
   transition: 0.5s !important;
 }
 .social-bar ul li a span {
@@ -832,10 +975,10 @@ nav .nav-link:hover .nav-item-effect::after {
 }
 
 .social-bar .github:hover {
-  color: #3b5998;
+  color: var(--color-two);
 }
 .social-bar .github:hover span {
-  background: #3b5998;
+  background: var(--color-two);
 }
 .social-bar .telegram:hover {
   color: #1da1f2;
@@ -874,7 +1017,7 @@ nav .nav-link:hover .nav-item-effect::after {
 .custom-shape-divider-bottom-1723269695 svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
+  min-width: calc(100% + 1.3px);
   height: 10rem;
   transform: rotateY(180deg);
 }
